@@ -25,7 +25,6 @@ double maximum(double array[], size_t n);
 
 /* function main begins program execution */
 int main(void) {
-
     /* enter 10 double numbers */
     double values[N];
     printf("Enter %d numbers: ", N);
