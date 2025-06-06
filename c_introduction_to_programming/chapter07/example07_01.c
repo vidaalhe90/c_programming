@@ -1,78 +1,78 @@
 
-#ifdef __unix__
-    #define printf_s printf
-    #define scanf_s scanf
+/* Exercise 7.1 - Assign Grades.
+   
+   Write a program that reads student scores, gets the best score, and
+   then assigns grades based on the following scheme:
+   
+   Grade A if score >= best - 5,
+   Grade B if score >= best - 10,
+   Grade C if score >= best - 15,
+   Grade D if score >= best - 20,
+   Grade F otherwise.
+
+   The program prompts the user to enter the total number of students, and then
+   prompts the user to enter all of the scores, and concludes by displaying the grades. */
+
+#ifdef _WIN32
+    #define _CRT_SECURE_NO_WARNINGS
 #endif
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    
-    int n;
-    printf_s("%s", "Enter number of students: ");
-    scanf_s("%d", &n);
-    
-    int *scores = (int *)malloc(n * sizeof (int));
-    for (int i = 0; i < n; i++) {
-        scanf_s("%d", &scores[i]);
-    }
-
+/* Helper function to find best score. */
+int find_best(int scores[], int n) {
     int best_score = scores[0];
     for (int i = 1; i < n; i++) {
         if (scores[i] > best_score) {
             best_score = scores[i];
         }
     }
+    return best_score;
+}
 
-    char *grades = (char *)malloc(n * sizeof (char));
+/* Helper function to get grade given a score (and the best score finded). */
+char get_grade(int score, int best_score) {
+    if (score >= best_score - 5)  { return 'A'; }
+    if (score >= best_score - 10) { return 'B'; }
+    if (score >= best_score - 15) { return 'C'; }
+    if (score >= best_score - 20) { return 'D'; }
+    return 'F';
+}
+
+/* Function main begins program execution. */
+int main(void) {
+
+    /* enter number of student scores to be analyzed */
+    int n;
+    printf("%s", "Enter number of student scores: ");
+    scanf("%d", &n);
+
+    /* enter n scores */
+    int* scores = (int*)malloc(n * sizeof (int));
+    printf("Entering %d scores: ", n);
     for (int i = 0; i < n; i++) {
-        grades[i] = 'F';
-        if      (scores[i] >= best_score - 5)  { grades[i] = 'A'; }
-        else if (scores[i] >= best_score - 10) { grades[i] = 'B'; }
-        else if (scores[i] >= best_score - 15) { grades[i] = 'C'; }
-        else if (scores[i] >= best_score - 20) { grades[i] = 'D'; }
+        scanf("%d", &scores[i]);
     }
 
+    /* find the best entered scored */
+    int best_score = find_best(scores, n);
+    
+    /* assign to each score the corresponding grade */
+    char* grades = (char*)malloc(n * sizeof (char));
     for (int i = 0; i < n; i++) {
-        printf_s("Student %d score is %d and grade is %c\n", i, scores[i], grades[i]);
+        grades[i] = get_grade(scores[i], best_score);
     }
 
-    if (scores) {
-        free(scores);
-        scores = NULL;
+    /* show results */
+    for (int i = 0; i < n; i++) {
+        printf("Student %d score is %d and grade is %c\n", i, scores[i], grades[i]);
     }
 
-    if (grades) {
-        free(grades);
-        grades = NULL;
-    }
+    /* free heap memory used */
+    free(scores);
+    free(grades);
 
+    /* end program execution */
     return EXIT_SUCCESS;
-}
-
-void enter_positive(const char* prompt, int *value) {
-    int n = 0;
-    while (n <= 0) {
-        printf_s("%s", prompt);
-        scanf_s("%d", n);
-    }
-    *value = n;
-}
-
-void enter_scores(int *scores, int n) {
-    printf_s("Enter %d scores: ", n);
-    for (int i = 0; i < n; i++) {
-        scanf_s("%d", &scores[i]);
-    }
-}
-
-int find_best(int *scores, int n) {
-    int best = scores[0];
-    for (int i = 1; i < n; i++) {
-        if (scores[i] > best) {
-            best = scores[i];
-        }
-    }
-    return best;
 }
