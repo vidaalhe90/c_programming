@@ -1,7 +1,7 @@
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Exercise 7.1 - Assign grades                                                          *
- *                                                                                       *
+ * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - *
  * Write a program that reads student scores, gets the best scode, and                   *
  * the assigns grades based on the following scheme:                                     *
  *                                                                                       *
