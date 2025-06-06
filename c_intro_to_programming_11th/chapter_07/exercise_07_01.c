@@ -50,7 +50,7 @@ int main(void) {
     scanf("%d", &n);
 
     /* enter scores */
-    int* scores = (int*)malloc(n * sizeof (int));
+    int *scores = (int *)malloc(n * sizeof (int));
     printf("Entering %d scores: ", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &scores[i]);
@@ -60,7 +60,7 @@ int main(void) {
     int best_score = find_best(scores, n);
 
     /* assigns a grade to each score */
-    char* grades = (char*)malloc(n * sizeof (char));
+    char *grades = (char *)malloc(n * sizeof (char));
     for (int i = 0; i < n; i++) {
         grades[i] = get_grade(scores[i], best_score);
     }
