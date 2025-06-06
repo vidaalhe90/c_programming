@@ -31,5 +31,6 @@ int main(void) {
     printf("The number of odd numbers: %d\n", counters[1]);
     printf("The number of even numbers: %d\n", counters[0]);
 
+    /* ends program execution */
     return EXIT_SUCCESS;
 }
