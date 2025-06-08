@@ -15,7 +15,6 @@
 // prompts the user to enter all of the scores, and concludes by displaying the grades. //
 //////////////////////////////////////////////////////////////////////////////////////////
 
-
 // in order to get portable code
 #ifdef _WIN32
     #define _CRT_SECURE_NO_WARNINGS
