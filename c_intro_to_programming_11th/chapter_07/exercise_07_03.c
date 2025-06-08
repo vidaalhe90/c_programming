@@ -20,7 +20,6 @@
 
 // function main begins program execution
 int main(void) {
-
     // inits counters array
     int counters[N + 1] = {0};
 
