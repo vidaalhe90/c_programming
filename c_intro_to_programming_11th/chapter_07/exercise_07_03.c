@@ -1,8 +1,8 @@
 
 /////////////////////////////////////////////////////////////////
-// Exercise 7.1 - Count ocurrences of numbers.				   //
+// Exercise 7.3 - Count ocurrences of numbers.		       //
 /////////////////////////////////////////////////////////////////
-// Write a program that reads the integers between 1 and 50	   //
+// Write a program that reads the integers between 1 and 50    //
 // and count ocurrecnes of each. Assume the input ends with 0. //
 /////////////////////////////////////////////////////////////////
 
@@ -20,17 +20,21 @@
 
 // function main begins program execution
 int main(void) {
-    
-	// inits counters array
+
+    // inits counters array
     int counters[N + 1] = {0};
 
-	// enter integers between 1 and 50 and increments corresponding counter
+    // enter integers between 1 and 50 and increments corresponding counter
     int n;
     printf("%s", "Enter integers between 1 and 50 (0 to exit): ");
     for (;;) {
         scanf("%d", &n);
-        if (n == 0) { break; }
-        if (1 <= n && n <= N) { counters[n]++; }
+        if (n == 0) {
+            break;
+        }
+        if (1 <= n && n <= N) {
+            counters[n]++;
+        }
     }
 
     // shows results
