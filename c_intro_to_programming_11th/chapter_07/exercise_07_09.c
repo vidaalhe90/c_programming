@@ -3,12 +3,12 @@
  * Exercise 7.9 - Find the largest element.                                    *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - * 
  * Write a function that find the largest element in an array                  *
- * of double array using the following prototype:                             *
+ * of double array using the following prototype:                              *
  *                                                                             *
- *      double maximum(double array[], size_t n);                                 *
+ *      double maximum(double array[], size_t n);                              *
  *                                                                             *
  * Write a test program that prompts the user to enter 10 numbers, invokes     *
- * this function to return the maximum value, and displays the maximum array. *
+ * this function to return the maximum value, and displays the maximum array.  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #ifdef _WIN32
