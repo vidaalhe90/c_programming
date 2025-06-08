@@ -27,7 +27,6 @@
 
 // helper function to find best score in array.
 int find_best(int scores[], size_t n) {
-
     int best_score = scores[0];
     for (size_t i = 1; i < n; i++) {
         if (scores[i] > best_score) {
@@ -39,24 +38,30 @@ int find_best(int scores[], size_t n) {
 
 // helper function to get corresponding grade given a score
 char get_grade(int score, int best_score) {
-
-    if (score >= best_score - 5)  { return 'A'; }
-    if (score >= best_score - 10) { return 'B'; }
-    if (score >= best_score - 15) { return 'C'; }
-    if (score >= best_score - 20) { return 'D'; }
+    if (score >= best_score - 5) {
+        return 'A';
+    }
+    if (score >= best_score - 10) {
+        return 'B';
+    }
+    if (score >= best_score - 15) {
+        return 'C';
+    }
+    if (score >= best_score - 20) {
+        return 'D';
+    }
     return 'F';
 }
 
 // function main begins program execution
 int main(void) {
-
     // enter number of scores to be entered
     int n;
     printf("%s", "Enter number of student scores: ");
     scanf("%d", &n);
 
     // enter student scores
-    int *scores = (int *)malloc(n * sizeof(int));
+    int *scores = (int *)malloc(n * sizeof (int));
     printf("Entering %d scores: ", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &scores[i]);
