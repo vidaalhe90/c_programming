@@ -1,19 +1,20 @@
 
-//////////////////////////////////////////////////////////////////////////////////////////
-// Exercise 7.1 - Assign grades                                                         //
-//////////////////////////////////////////////////////////////////////////////////////////
-// Write a program that reads student scores, gets the best scode, and                  //
-// the assigns grades based on the following scheme:                                    //
-//                                                                                      //
-//     Grade A if score >= best - 5,                                                    // 
-//     Grade B if score >= best - 10,                                                   //
-//     Grade C if score >= best - 15,                                                   //
-//     Grade D if score >= best - 20,                                                   //
-//     Grade F otherwise.                                                               //
-//                                                                                      //
-// The program prompts the user to enter the total number of students, and then         //
-// prompts the user to enter all of the scores, and concludes by displaying the grades. //
-//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// Exercise 7.1 - Assign grades                                                 //
+//////////////////////////////////////////////////////////////////////////////////
+// Write a program that reads student scores, gets the best scode, and then     //
+// assigns grades based on the following scheme:                                //
+//                                                                              //
+// Grade A if score >= best - 5,                                                //
+// Grade B if score >= best - 10,                                               //
+// Grade C if score >= best - 15,                                               //
+// Grade D if score >= best - 20,                                               //
+// Grade F otherwise.                                                           //
+//                                                                              //
+// The program prompts the user to enter the total number of students, and then //
+// prompts the user to enter all of the scores, and concludes by displaying     //
+// the grades.                                                                  //
+//////////////////////////////////////////////////////////////////////////////////
 
 // in order to get portable code
 #ifdef _WIN32
@@ -26,7 +27,7 @@
 
 // helper function to find best score in array.
 int find_best(int scores[], size_t n) {
-    
+
     int best_score = scores[0];
     for (size_t i = 1; i < n; i++) {
         if (scores[i] > best_score) {
@@ -38,7 +39,7 @@ int find_best(int scores[], size_t n) {
 
 // helper function to get corresponding grade given a score
 char get_grade(int score, int best_score) {
-    
+
     if (score >= best_score - 5)  { return 'A'; }
     if (score >= best_score - 10) { return 'B'; }
     if (score >= best_score - 15) { return 'C'; }
@@ -48,14 +49,14 @@ char get_grade(int score, int best_score) {
 
 // function main begins program execution
 int main(void) {
-    
+
     // enter number of scores to be entered
     int n;
     printf("%s", "Enter number of student scores: ");
     scanf("%d", &n);
 
     // enter student scores
-    int *scores = (int *)malloc(n * sizeof (int));
+    int *scores = (int *)malloc(n * sizeof(int));
     printf("Entering %d scores: ", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &scores[i]);
