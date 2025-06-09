@@ -42,12 +42,12 @@ char get_grade(const int& score, const int& best_score) {
 /* Function main begins program execution. */
 int main() {
 
-    // Enter a positive integers.
-    int n {0};
-    while (n <= 0) {
+    // Enter a valid positive integer.
+    int n;
+    do {
         std::cout << "Enter number of student scores: ";
         std::cin >> n;
-    }
+    } while (n <= 0);
 
     // Enter n student scores
     std::vector<int> scores(n);
