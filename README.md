@@ -12,6 +12,6 @@ The objective is to strengthen programming skills, explore problem-solving techn
 ## Compiler Used
 
 The following compiler is used:
-- **MSVC C Compiler** (`cl.exe` program as backend compiler)
+- **MSVC C++ Compiler** (`cl.exe` program as backend compiler)
 - **Clang++ C++ Compiler** (`clang++.exe` as frontend compiler )
 - Code compilation example: `clang++ .\example.cpp -std=c++20 -g --pedantic`
