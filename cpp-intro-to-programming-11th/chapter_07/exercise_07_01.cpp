@@ -41,7 +41,6 @@ char get_grade(const int& score, const int& best_score) {
 
 /* Function main begins program execution. */
 int main() {
-
     // Enter a valid positive integer.
     int n {0};
     while (n <= 0) {
